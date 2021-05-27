@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: victorhernandez
@@ -12,11 +13,26 @@
 </head>
 <body>
 <h1>Login Page</h1>
-<form action="profile.jsp" method="post">
+
+<%
+    String Username = request.getParameter("username");
+    String Password = request.getParameter("password");
+    request.setAttribute("username", Username);
+    request.setAttribute("password", Password);
+%>
+
+<form action="login.jsp" method="post">
     <br/>Username:<input type="text" name="username">
     <br/>Password:<input type="password" name="password">
     <br/><input type="submit" value="Submit">
 </form>
+
+<c:choose>
+    <c:when test="${username == 'admin' && password == 'password'}">
+        <% response.sendRedirect("/profile.jsp"); %>
+    </c:when>
+</c:choose>
+
 
 </body>
 </html>
