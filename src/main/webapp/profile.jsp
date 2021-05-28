@@ -9,8 +9,10 @@
 <html>
 <head>
     <title>Profile</title>
+    <link rel="stylesheet" href="css/ProfileStyle.css">
 </head>
 <body>
+<%@ include file="partials/navbar.jsp" %>
 <h1>Welcome Back!</h1>
 
 </body>
