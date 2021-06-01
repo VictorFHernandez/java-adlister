@@ -50,7 +50,4 @@ public class albumBean implements Serializable {
     public void setSales(float sales){
         this.sales = sales;
     }
-
-
-
 }
